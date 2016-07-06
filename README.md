@@ -5,7 +5,7 @@ Clone to repo
 
 `git init`
 
-`git remote add protectmeplease git@github.com:glitchedpixelsmc/apache-protection.git:..git`
+`git remote add protectmeplease https://github.com/glitchedpixelsmc/apache-protection.git`
 
 `git pull protectmeplease master`
 
