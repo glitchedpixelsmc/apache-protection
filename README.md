@@ -1,5 +1,5 @@
 # apache-protection
-These files WILL protect you from freaky stuff out there on apache.
+These files WILL protect you from freaky stuff out there on apache. LAMP and APACHE2 are needed.
 ###Installation
 Clone to repo
 
