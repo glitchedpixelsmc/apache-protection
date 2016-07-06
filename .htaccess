@@ -1,9 +1,24 @@
+
 SetEnvIfNoCase User-Agent "facebookexternalhit" bad_bot
 SetEnvIfNoCase User-Agent "Twitterbot" bad_bot
 SetEnvIfNoCase User-Agent "Baiduspider" bad_bot
 SetEnvIfNoCase User-Agent "MetaURI" bad_bot
 SetEnvIfNoCase User-Agent "mediawords" bad_bot
 SetEnvIfNoCase User-Agent "FlipboardProxy" bad_bot
+
+<IfModule mod_rewrite.c>
+RewriteCond %{QUERY_STRING} q=user/register
+RewriteRule ^/?$ http://www.nixbla.com/ [R=301,L]
+RewriteCond %{QUERY_STRING} q=node/add
+RewriteRule ^/?$ http://www.nixbla.com/ [R=301,L]
+</IfModule>
+
+#BLOCK BROWSER ACCESS TO LOG FILES
+<Files  ~ "\.log$">
+  Order allow,deny
+  Deny from all
+</Files>
+
 # STRONG HTACCESS PROTECTION
 <Files ~ "^.*\.([Hh][Tt][Aa])">
 order allow,deny
