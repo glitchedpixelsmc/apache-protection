@@ -2174,3 +2174,19 @@ SetEnvIfNoCase User-Agent "FlipboardProxy" bad_bot
   Allow from all
   Deny from env=bad_bot
 </Limit>
+<IfModule mod_rewrite.c>
+	RewriteCond %{HTTP_HOST} (.*)\.crimea\.com [NC,OR]
+	RewriteCond %{HTTP_HOST} s368\.loopia\.se [NC,OR]
+	RewriteCond %{HTTP_HOST} kanagawa\.ocn [NC,OR]
+	RewriteCond %{HTTP_HOST} g00g1e [NC,OR]
+	RewriteCond %{HTTP_USER_AGENT} (ia_archiver|g00g1e|seekerspider|siclab|spam|sqlmap) [NC]
+	RewriteRule .* - [F,L]
+</IfModule>
+<IfModule mod_alias.c>
+	RedirectMatch 403 router\.php
+	RedirectMatch 403 /\)\.html\(
+</IfModule>
+<IfModule mod_rewrite.c>
+	RewriteCond %{QUERY_STRING} http\:\/\/www\.google\.com\/humans\.txt\? [NC]
+	RewriteRule .* - [F,L]
+</IfModule>
