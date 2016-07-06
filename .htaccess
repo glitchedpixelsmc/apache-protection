@@ -1,3 +1,9 @@
+SetEnvIfNoCase User-Agent "facebookexternalhit" bad_bot
+SetEnvIfNoCase User-Agent "Twitterbot" bad_bot
+SetEnvIfNoCase User-Agent "Baiduspider" bad_bot
+SetEnvIfNoCase User-Agent "MetaURI" bad_bot
+SetEnvIfNoCase User-Agent "mediawords" bad_bot
+SetEnvIfNoCase User-Agent "FlipboardProxy" bad_bot
 # STRONG HTACCESS PROTECTION
 <Files ~ "^.*\.([Hh][Tt][Aa])">
 order allow,deny
